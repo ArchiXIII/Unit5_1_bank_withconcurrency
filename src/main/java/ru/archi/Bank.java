@@ -1,6 +1,5 @@
 package ru.archi;
 
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Черный on 11.10.2017.
@@ -12,8 +11,12 @@ public class Bank {
         this.moneyAmount = moneyAmount;
     }
 
-    public void withdrawMoney(int amount) {
-        moneyAmount -= amount;
+    public void getMoney(int amount) {
+        if(moneyAmount < amount){
+            System.out.println("Not enough money");
+        }else {
+            moneyAmount -= amount;
+        }
     }
 
     public boolean hasMoney(int amount){
